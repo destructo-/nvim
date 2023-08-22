@@ -24,4 +24,6 @@ return require('packer').startup(function(use)
   use { 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim', 'neovim/nvim-lspconfig', run = ':MasonUpdate' }
   -- Autocompletion
   use { 'hrsh7th/nvim-cmp', requires = { { 'hrsh7th/cmp-nvim-lsp' }, { 'hrsh7th/cmp-vsnip' }, { 'hrsh7th/vim-vsnip' } } }
+  -- Quick scope
+  use { 'jinh0/eyeliner.nvim' }
 end)
