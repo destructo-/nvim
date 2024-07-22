@@ -11,7 +11,7 @@ return require('packer').startup(function(use)
   -- File tree
   use { 'nvim-tree/nvim-tree.lua',         requires = { 'nvim-tree/nvim-web-devicons' } } -- optional, for file icons 
   -- Better fuzzy finder
-  use { 'nvim-telescope/telescope.nvim',   tag = '0.1.0', requires = { {'nvim-lua/plenary.nvim'} } }
+  use { 'nvim-telescope/telescope.nvim',   requires = { {'nvim-lua/plenary.nvim'} } }
   -- treesiter API
   use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'} }
   -- Show codes as colors
@@ -26,4 +26,10 @@ return require('packer').startup(function(use)
   use { 'hrsh7th/nvim-cmp', requires = { { 'hrsh7th/cmp-nvim-lsp' }, { 'hrsh7th/cmp-vsnip' }, { 'hrsh7th/vim-vsnip' } } }
   -- Quick scope
   use { 'jinh0/eyeliner.nvim' }
+  -- Http request console
+  use { 'diepm/vim-rest-console' }
+  -- Scala IDE
+  use { 'scalameta/nvim-metals', requires = { 'nvim-lua/plenary.nvim', 'mfussenegger/nvim-dap' } }
+  -- Auto Save
+  use { 'Pocco81/auto-save.nvim' }
 end)
