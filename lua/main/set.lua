@@ -7,7 +7,7 @@ vim.opt.shiftwidth = 2
 
 vim.opt.swapfile = false
 
--- vim.opt.colorcolumn = "100"
+vim.opt.colorcolumn = "120"
 
 vim.opt.smartindent = true
 
@@ -19,3 +19,5 @@ vim.opt.list = true
 vim.opt.listchars:append "space:⋅"
 
 vim.opt.cursorline = true
+
+-- vim.opt_global.updatetime = 600
