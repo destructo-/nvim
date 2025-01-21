@@ -41,4 +41,7 @@ return require('packer').startup(function(use)
   use { 'voldikss/vim-floaterm' }
   -- shows funcitons scope
   use { 'lukas-reineke/indent-blankline.nvim' }
+  -- ChatGpt
+  use { 'jackMort/ChatGPT.nvim',  requires = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim', 'folke/trouble.nvim', 'nvim-telescope/telescope.nvim' } }
+
 end)
