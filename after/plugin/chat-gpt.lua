@@ -1,17 +1,19 @@
-require("chatgpt").setup({
+-- EXPEREMENTAL chat GPT integration
+
+local configuration = {
   api_key_cmd = 'printenv CHAT_GPT',
   openai_params = {
-  -- NOTE: model can be a function returning the model name
-  -- this is useful if you want to change the model on the fly
-  -- using commands
-  -- Example:
-  -- model = function()
-  --     if some_condition() then
-  --         return "gpt-4-1106-preview"
-  --     else
-  --         return "gpt-3.5-turbo"
-  --     end
-  -- end,
+    -- NOTE: model can be a function returning the model name
+    -- this is useful if you want to change the model on the fly
+    -- using commands
+    -- Example:
+    -- model = function()
+    --     if some_condition() then
+    --         return "gpt-4-1106-preview"
+    --     else
+    --         return "gpt-3.5-turbo"
+    --     end
+    -- end,
     model = "gpt-4o",
     frequency_penalty = 0,
     presence_penalty = 0,
@@ -20,4 +22,21 @@ require("chatgpt").setup({
     top_p = 0.1,
     n = 1,
   }
-})
+}
+
+require("chatgpt").setup(configuration)
+
+local wk = require("which-key")
+
+wk.add {
+  {
+    '<leader>ai',
+    '<CMD>ChatGPT<CR>',
+    desc = 'Toggle chat-gpt',
+  },
+  {
+    '<leader>aa',
+    '<CMD>ChatGPTActAs<CR>',
+    desc = 'Chat-gpt act as',
+  },
+}

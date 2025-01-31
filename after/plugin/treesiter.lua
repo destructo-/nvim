@@ -1,4 +1,11 @@
-require'nvim-treesitter.configs'.setup {
+-- Tree-sitter is a parser generator tool and an incremental parsing library.
+-- It can build a concrete syntax tree for a source file and efficiently update
+-- the syntax tree as the source file is edited.
+--
+-- The goal of nvim-treesitter is both to provide a simple and easy way to use the interface for
+-- tree-sitter in Neovim and to provide some basic functionality such as highlighting based on it
+
+local configuration = {
   -- A list of parser names, or "all"
   ensure_installed = {
     "c",
@@ -13,7 +20,8 @@ require'nvim-treesitter.configs'.setup {
     "luadoc",
     "vim",
     "lua",
-    "markdown"
+    "markdown",
+    "query"
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -54,4 +62,14 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+  query_linter = {
+    enable = true,
+    use_virtual_text = true,
+    lint_events = { "BufWrite", "CursorHold" },
+  },
+  indent = {
+    enable = true
+  }
 }
+
+require('nvim-treesitter.configs').setup(configuration)

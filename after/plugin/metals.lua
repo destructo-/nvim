@@ -1,3 +1,5 @@
+-- Add support to lsp-metals integration
+
 local metals_config = require("metals").bare_config()
 
 -- Example of settings
@@ -16,27 +18,18 @@ metals_config.settings = {
 -- a have settings to capture this in your statusline or else you'll not see
 -- any messages from metals. There is more info in the help docs about this
 metals_config.init_options.statusBarProvider = "on"
+-- metals_config.init_options.icons = "unicode"
 metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 metals_config.tvp = {
   panel_alignment = "right"
 }
 
--- *READ THIS*
--- I *highly* recommend setting statusBarProvider to true, however if you do,
--- you *have* to have a setting to display this in your statusline or else
--- you'll not see any messages from metals. There is more info in the help
--- docs about this
--- metals_config.init_options.statusBarProvider = "on"
-
--- Example if you are using cmp how to make sure the correct capabilities for snippets are set
-metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
-
 metals_config.on_attach = function(client, bufnr)
   require("metals").setup_dap()
-  vim.keymap.set("n", "<leader>td", function()
-    require("metals.tvp").reveal_in_tree()
-  end)
+  -- vim.keymap.set("n", "<leader>td", function()
+  --   require("metals.tvp").reveal_in_tree()
+  -- end)
 
   vim.cmd([[hi! link LspReferenceText CursorColumn]])
   vim.cmd([[hi! link LspReferenceRead CursorColumn]])
@@ -58,3 +51,28 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
   group = nvim_metals_group,
 })
+
+local wk = require("which-key")
+
+wk.add {
+  {
+    '<leader>mi',
+    '<CMD>MetalsImportBuild<CR>',
+    desc = "Import build"
+  },
+  {
+    '<leader>ms',
+    '<CMD>MetalsScanSources<CR>',
+    desc = "Scan sources"
+  },
+  {
+    '<leader>mS',
+    '<CMD>MetalsRunDoctor<CR>',
+    desc = "Status"
+  },
+  {
+    '<leader>mC',
+    '<CMD>MetalsCompileClean<CR>',
+    desc = "Clean compile"
+  },
+}

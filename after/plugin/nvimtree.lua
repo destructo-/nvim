@@ -1,10 +1,22 @@
+-- A File Explorer For Neovim Written In Lua
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-vim.g.nvim_tree_group_empty = 1 
+vim.g.nvim_tree_group_empty = 1
 
-local api = require("nvim-tree.api")
-require("nvim-tree").setup({
+local configuration = {
   renderer = {
+    indent_markers = {
+      enable = true
+    },
+    icons = {
+      glyphs = {
+        folder = {
+          arrow_closed = "+",
+          arrow_open = "-"
+        }
+      }
+    },
     group_empty = true,
   },
   view = {
@@ -16,20 +28,49 @@ require("nvim-tree").setup({
   git = {
     ignore = false,
   },
-})
+}
 
-vim.keymap.set("n", "<leader>tt", function()
-  api.tree.toggle({ find_file = true })
-end)
+require("nvim-tree").setup(configuration)
 
-vim.keymap.set("n", "<leader>tc", function()
-  api.tree.collapse_all()
-end)
+-- local api = require("nvim-tree.api")
+--
+-- vim.keymap.set("n", "<leader>tt", function()
+--   api.tree.toggle({ find_file = true })
+-- end)
+--
+-- vim.keymap.set("n", "<leader>tc", function()
+--   api.tree.collapse_all()
+-- end)
+--
+-- vim.keymap.set("n", "<leader>tf", function ()
+--   api.tree.find_file()
+-- end)
+--
+-- vim.keymap.set("n", "<leader>tg", function ()
+--   api.node.open.toggle_group_empty()
+-- end)
 
-vim.keymap.set("n", "<leader>tf", function ()
-  api.tree.find_file()
-end)
+local wk = require("which-key")
 
-vim.keymap.set("n", "<leader>tg", function ()
-  api.node.open.toggle_group_empty()
-end)
+wk.add {
+  {
+    '<leader>tt',
+    '<CMD>lua require("nvim-tree.api").tree.toggle({ find_file = true })<CR>',
+    desc = "Toggle tree"
+  },
+  {
+    '<leader>tc',
+    '<CMD>lua require("nvim-tree.api").tree.collapse_all()<CR>',
+    desc = "Collapse all"
+  },
+  {
+    '<leader>tf',
+    '<CMD>lua require("nvim-tree.api").tree.find_file()<CR>',
+    desc = "Focus current buffer"
+  },
+  {
+    '<leader>tg',
+    '<CMD>lua require("nvim-tree.api").node.open.toggle_group_empty()<CR>',
+    desc = "Toggle folder groups"
+  },
+}

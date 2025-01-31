@@ -1,5 +1,9 @@
+-- A completion engine plugin for neovim written in Lua.
+-- Completion sources are installed from external repositories and "sourced".
+
 local cmp = require("cmp")
-cmp.setup({
+
+local configuration = {
   sources = {
     { name = "nvim_lsp" },
     { name = "vsnip" },
@@ -32,4 +36,6 @@ cmp.setup({
       end
     end,
   })
-})
+}
+
+cmp.setup(configuration)

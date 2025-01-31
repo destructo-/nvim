@@ -7,16 +7,13 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use { 'wbthomason/packer.nvim' }
   -- Color scheme
-  use { 'catppuccin/nvim', as = 'catppuccin' }
-  use { 'rebelot/kanagawa.nvim' }
-  use { 'EdenEast/nightfox.nvim'  }
-  use { 'sainnhe/gruvbox-material' }
+  use { 'EdenEast/nightfox.nvim' }
   -- File tree
-  use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons' } } -- optional, for file icons 
+  use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons' } } -- optional, for file icons
   -- Better fuzzy finder
-  use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
+  use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim' }, { 'nvim-tree/nvim-web-devicons', opt = true } } }
   -- treesiter API
-  use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'} }
+  use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
   -- Show codes as colors
   use { 'norcalli/nvim-colorizer.lua' }
   -- Git information
@@ -41,7 +38,14 @@ return require('packer').startup(function(use)
   use { 'voldikss/vim-floaterm' }
   -- shows funcitons scope
   use { 'lukas-reineke/indent-blankline.nvim' }
+  -- lsp notifications block
+  use { 'j-hui/fidget.nvim' }
+  -- show hotkeys
+  use { 'folke/which-key.nvim' }
+  -- pretty project debug
+  use { 'folke/trouble.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }
+  -- render markdown foles in vim
+  use { 'MeanderingProgrammer/markdown.nvim', after = { 'nvim-treesitter' }, requires = { 'echasnovski/mini.nvim', opt = true } }
   -- ChatGpt
-  use { 'jackMort/ChatGPT.nvim',  requires = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim', 'folke/trouble.nvim', 'nvim-telescope/telescope.nvim' } }
-
+  use { 'jackMort/ChatGPT.nvim', requires = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim', 'folke/trouble.nvim', 'nvim-telescope/telescope.nvim' } }
 end)

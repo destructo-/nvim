@@ -1,21 +1,16 @@
 require("main")
--- require("kanagawa").setup({
---    theme = "wave",
---    background = {
---      dark = "wave",
---      light = "lotus"
---    }
--- })
-require("nightfox").setup({})
--- require("catppuccin").setup({
---  flavour = "mocha"
--- })
--- vim.opt.background=light
--- vim.g.gruvbox_material_background = 'hard'
--- vim.g.gruvbox_material_foreground = 'original'
+require("nightfox").setup({
+  options = {
+    colorblind = {
+      enable = true,         -- Enable colorblind support
+      simulate_only = false, -- Only show simulated colorblind colors and not diff shifted
+      severity = {
+        protan = 1,          -- Severity [0,1] for protan (red)
+        deutan = 0,          -- Severity [0,1] for deutan (green)
+        tritan = 0,          -- Severity [0,1] for tritan (blue)
+      }
+    }
+  }
+})
 
 vim.cmd.colorscheme "nightfox"
-
--- vim.cmd.colorscheme "gruvbox-material"
-
--- vim.cmd.colorscheme "catppuccin"

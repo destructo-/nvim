@@ -9,7 +9,7 @@ local function status_line()
   local function metals_status()
     return vim.g["metals_status"] or ""
   end
-  
+
   local function bsp_status()
     local status = vim.g["metals_bsp_status"]
     if status and status ~= "" then

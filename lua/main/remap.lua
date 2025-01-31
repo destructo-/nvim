@@ -1,17 +1,10 @@
 -- base keymaps
 vim.g.mapleader = " "
 
--- vim.keymap.set("n", "gt", function()
---   vim.cmd("tab split")
---   vim.cmd("terminal")
--- end)
+vim.keymap.set("n", "<m-h>", "<C-w>h", opts)
+vim.keymap.set("n", "<m-j>", "<C-w>j", opts)
+vim.keymap.set("n", "<m-k>", "<C-w>k", opts)
+vim.keymap.set("n", "<m-l>", "<C-w>l", opts)
+vim.keymap.set("n", "<m-tab>", "<c-6>", opts)
 
 vim.keymap.set("i", "jj", "<Esc>")
-
-vim.keymap.set("n", "<space>ne", function()
-  vim.diagnostic.goto_next()
-end)
-
-vim.keymap.set("n", "<space>pe", function() 
-  vim.diagnostic.goto_prev()
-end)
