@@ -92,7 +92,7 @@ wk.add {
     }
   },
   {
-    "<leader>x",
+    "<leader>e",
     group = "Diagnostic"
   }
 }

@@ -31,25 +31,6 @@ local configuration = {
 }
 
 require("nvim-tree").setup(configuration)
-
--- local api = require("nvim-tree.api")
---
--- vim.keymap.set("n", "<leader>tt", function()
---   api.tree.toggle({ find_file = true })
--- end)
---
--- vim.keymap.set("n", "<leader>tc", function()
---   api.tree.collapse_all()
--- end)
---
--- vim.keymap.set("n", "<leader>tf", function ()
---   api.tree.find_file()
--- end)
---
--- vim.keymap.set("n", "<leader>tg", function ()
---   api.node.open.toggle_group_empty()
--- end)
-
 local wk = require("which-key")
 
 wk.add {

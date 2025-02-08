@@ -25,8 +25,12 @@ call
 and make shure that `$XDG_CONFIG_HOME/nvim/after` is set as `{path_to_home}/.config/nvim/after`
 open `lua/main/packer.lua`
 
+```
 :so
+```
+```
 :PackerSync
+```
 
 restart nvim
 

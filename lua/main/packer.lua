@@ -20,12 +20,25 @@ return require('packer').startup(function(use)
   use { 'lewis6991/gitsigns.nvim' }
   -- Status bar
   use { 'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true } }
-  -- Language Servers support
+  -- Language Servers management
   use { 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim', 'neovim/nvim-lspconfig', run = ':MasonUpdate' }
+  -- Bridge bettween masson and lsp
+  use { "williamboman/mason-lspconfig.nvim" }
+  -- LSP Configurations
+  use { "neovim/nvim-lspconfig" }
   -- Autocompletion
-  use { 'hrsh7th/nvim-cmp', requires = { { 'hrsh7th/cmp-nvim-lsp' }, { 'hrsh7th/cmp-vsnip' }, { 'hrsh7th/vim-vsnip' } } }
-  -- Quick scope
-  use { 'jinh0/eyeliner.nvim' }
+  use { 'hrsh7th/nvim-cmp',
+    requires = {
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'hrsh7th/cmp-vsnip' },
+      { 'hrsh7th/vim-vsnip' },
+      { 'hrsh7th/cmp-calc' },
+      { 'hrsh7th/cmp-path' },
+      { 'hrsh7th/cmp-nvim-lsp-signature-help' },
+      { 'hrsh7th/cmp-cmdline' },
+      { 'hrsh7th/cmp-buffer' },
+    }
+  }
   -- Http request console
   use { 'diepm/vim-rest-console' }
   -- Scala IDE
@@ -46,6 +59,10 @@ return require('packer').startup(function(use)
   use { 'folke/trouble.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }
   -- render markdown foles in vim
   use { 'MeanderingProgrammer/markdown.nvim', after = { 'nvim-treesitter' }, requires = { 'echasnovski/mini.nvim', opt = true } }
+  -- easy move above buffer
+  use { 'smoka7/hop.nvim', tag = '*' }
+  -- hilight word uder corsor
+  use { 'RRethy/vim-illuminate' }
   -- ChatGpt
   use { 'jackMort/ChatGPT.nvim', requires = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim', 'folke/trouble.nvim', 'nvim-telescope/telescope.nvim' } }
 end)
