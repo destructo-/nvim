@@ -1,0 +1,28 @@
+return {
+  require("plugins.mason"),
+  require("plugins.mason-lspconfig"),
+  require("plugins.auto-save"),
+  require("plugins.bqf"),
+  require("plugins.chat-gpt"),
+  require("plugins.cmp"),
+  require("plugins.colorizer"),
+  require("plugins.fidget"),
+  require("plugins.floatterm"),
+  -- require("plugins.fold-imports"),
+  require("plugins.gitsigns"),
+  require("plugins.hop"),
+  require("plugins.indent-blankline"),
+  require("plugins.lsp"),
+  require("plugins.lualine"),
+  require("plugins.metals"),
+  require("plugins.nvimtree"),
+  require("plugins.telescope"),
+  require("plugins.treesiter"),
+  require("plugins.trouble"),
+  require("plugins.vim-rest-console"),
+  require("plugins.which-key-setup"),
+  -- require("plugins.illuminate"),
+  require("plugins.render-markdown"),
+
+  require("plugins.fold-imports.fold-imports")
+}

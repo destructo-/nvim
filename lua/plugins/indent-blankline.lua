@@ -4,7 +4,7 @@ local configuration = {
   indent = { char = '┊' },
   scope = {
     show_start = false,
-    enabled = true
+    enabled = true,
   }
 }
 

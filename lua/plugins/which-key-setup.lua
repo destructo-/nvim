@@ -13,8 +13,8 @@ local configuration = {
       text_objects = false,
       windows = false,
       nav = false,
-      z = false,
-      g = false,
+      z = true,
+      g = true,
     },
   },
   win = {
@@ -82,6 +82,7 @@ wk.add {
     group = "Metals",
     icon = {
       icon = "",
+      color = "red"
     }
   },
   {
@@ -94,5 +95,12 @@ wk.add {
   {
     "<leader>e",
     group = "Diagnostic"
+  },
+  {
+    "<leader>o",
+    group = "Open",
+    icon = {
+      icon = ""
+    }
   }
 }

@@ -65,4 +65,14 @@ wk.add {
     '<CMD>lua vim.lsp.codelens.run()<CR>',
     desc = "Code lense"
   },
+  {
+    '<leader>lS',
+    '<CMD>LspStop<CR>',
+    desc = "Stop LSP service"
+  },
+  {
+    '<leader>lR',
+    '<CMD>LspStart<CR>',
+    desc = "Run LSP srver"
+  }
 }

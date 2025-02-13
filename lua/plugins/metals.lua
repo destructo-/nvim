@@ -31,7 +31,7 @@ metals_config.on_attach = function(client, bufnr)
   --   require("metals.tvp").reveal_in_tree()
   -- end)
 
-  vim.cmd([[hi! link LspReferenceText CursorColumn]])
+ vim.cmd([[hi! link LspReferenceText CursorColumn]])
   vim.cmd([[hi! link LspReferenceRead CursorColumn]])
   vim.cmd([[hi! link LspReferenceWrite CursorColumn]])
   vim.cmd([[autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()]])

@@ -21,7 +21,7 @@ return require('packer').startup(function(use)
   -- Status bar
   use { 'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true } }
   -- Language Servers management
-  use { 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim', 'neovim/nvim-lspconfig', run = ':MasonUpdate' }
+  use { 'williamboman/mason.nvim', run = ':MasonUpdate' }
   -- Bridge bettween masson and lsp
   use { "williamboman/mason-lspconfig.nvim" }
   -- LSP Configurations
@@ -58,11 +58,11 @@ return require('packer').startup(function(use)
   -- pretty project debug
   use { 'folke/trouble.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }
   -- render markdown foles in vim
-  use { 'MeanderingProgrammer/markdown.nvim', after = { 'nvim-treesitter' }, requires = { 'echasnovski/mini.nvim', opt = true } }
+  use { 'MeanderingProgrammer/render-markdown.nvim', requires = { 'echasnovski/mini.nvim', opt = true } }
   -- easy move above buffer
   use { 'smoka7/hop.nvim', tag = '*' }
   -- hilight word uder corsor
-  use { 'RRethy/vim-illuminate' }
+  -- use { 'RRethy/vim-illuminate' }
   -- ChatGpt
   use { 'jackMort/ChatGPT.nvim', requires = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim', 'folke/trouble.nvim', 'nvim-telescope/telescope.nvim' } }
 end)

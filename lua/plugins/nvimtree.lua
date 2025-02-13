@@ -47,7 +47,12 @@ wk.add {
   {
     '<leader>tf',
     '<CMD>lua require("nvim-tree.api").tree.find_file()<CR>',
-    desc = "Focus current buffer"
+    desc = "Focus current file"
+  },
+  {
+    '<leader>to',
+    '<CMD>lua require("nvim-tree.api").tree.open({ find_file = true })<CR>',
+    desc = "Open and go to current file"
   },
   {
     '<leader>tg',

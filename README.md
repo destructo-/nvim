@@ -4,31 +4,30 @@ this setup is mostly for work with scala metals
 
 but you can setup base support for what-you-whant-language using `:Mason` command
 
+## Clean plugins cache
+```bash
+rm -rf ~/.local/share/nvim/*
+```
+
 ## Setup
 make simlink to default configuration folder
-```
+```bash
 $ ln -s {path}/nvim  {path_to_home}/.config/nvim
 ```
 go to vim configuration folder
-```
+```bash
 $ cd {path_to_home}/.config/nvim
 ```
 open nvim there
-```
+```bash
 nvim .
 ```
-call 
-```
-:h rtp
-```
-
-and make shure that `$XDG_CONFIG_HOME/nvim/after` is set as `{path_to_home}/.config/nvim/after`
 open `lua/main/packer.lua`
 
-```
+```vim
 :so
 ```
-```
+```vim
 :PackerSync
 ```
 
@@ -39,7 +38,7 @@ main settings
 ``/lua/main/*``
 
 plugins setup
-``/after/plugin/*``
+``/plugins/*``
 
 main key mappings
 ``/lua/main/remap.lua``
