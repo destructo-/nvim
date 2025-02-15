@@ -13,10 +13,6 @@ return {
   'diepm/vim-rest-console',
   lazy = false,
   keys = {
-    {
-      "<leader>r",
-      "<CMD>call VrcQuery()<CR><CR>",
-      desc = "Send HTTP request",
-    }
+    { "<leader>r", "<CMD>call VrcQuery()<CR><CR>", desc = "Send HTTP request" }
   }
 }

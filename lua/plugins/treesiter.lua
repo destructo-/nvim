@@ -23,7 +23,6 @@ return {
         "vimdoc",
         "luadoc",
         "vim",
-        "lua",
         "markdown",
         "query"
       },
