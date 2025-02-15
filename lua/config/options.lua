@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 vim.opt.number = true
 
 vim.opt.expandtab = true
@@ -19,5 +22,3 @@ vim.opt.listchars:append "eol:¬"
 vim.opt.listchars:append "space:⋅"
 
 vim.opt.cursorline = true
-
--- vim.opt_global.updatetime = 600

@@ -1,1 +1,6 @@
-require("main")
+require("config.options")
+require("config.keymaps")
+require("config.autocmds")
+require("config.lsp-base")
+require("config.lazy")
+require("config.experements")

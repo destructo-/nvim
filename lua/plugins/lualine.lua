@@ -3,7 +3,7 @@
 local clients_lsp = function()
   local bufnr = vim.api.nvim_get_current_buf()
 
-  local clients = vim.lsp.buf_get_clients(bufnr)
+  local clients = vim.lsp.get_clients({ bufnr = bufnr })
   if next(clients) == nil then
     return ''
   end
@@ -15,17 +15,15 @@ local clients_lsp = function()
   return '\u{f085} ' .. table.concat(c, '|')
 end
 
-local configuration = {
-  options = {
-    --    theme = "catppuccin",
-    --    theme = "gruvbox-material",
-    component_separators = { left = '|', right = '|' },
-    section_separators = { left = '', right = '' },
-  },
-  sections = {
-    --    lualine_c = { 'filename', 'g:metals_status' },
-    lualine_x = { clients_lsp, 'encoding', 'filetype' }
+return {
+  "nvim-lualine/lualine.nvim",
+  opts = {
+    options = {
+      component_separators = { left = '|', right = '|' },
+      section_separators = { left = '', right = '' },
+    },
+    sections = {
+      lualine_x = { clients_lsp, 'encoding', 'filetype' }
+    }
   }
 }
-
-require('lualine').setup(configuration)

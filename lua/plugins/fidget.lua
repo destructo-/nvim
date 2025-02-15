@@ -1,3 +1,8 @@
 -- Extensible UI for Neovim notifications and LSP progress messages.
 
-require("fidget").setup()
+return {
+  "j-hui/fidget.nvim",
+  init = function()
+    require("fidget").setup()
+  end
+}

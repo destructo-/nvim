@@ -1,9 +1,10 @@
 -- Just better view for quickfix window
 
-local configurarion = {
-  preview = {
-    winblend = 0
+return {
+  'kevinhwang91/nvim-bqf',
+  opts = {
+    preview = {
+      winblend = 0
+    }
   }
 }
-
-require('bqf').setup(configurarion)
