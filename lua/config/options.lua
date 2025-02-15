@@ -22,3 +22,5 @@ vim.opt.listchars:append "eol:¬"
 vim.opt.listchars:append "space:⋅"
 
 vim.opt.cursorline = true
+
+vim.opt.foldmethod = "manual"
