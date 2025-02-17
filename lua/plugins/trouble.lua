@@ -8,7 +8,7 @@ return {
     { "<leader>ej", "<cmd>lua vim.diagnostic.goto_next()<CR>", desc = "Go to next error" },
     { "<leader>ek", "<cmd>lua vim.diagnostic.goto_prev()<CR>", desc = "Go to previous error" }
   },
-  init = function()
+  congig = function()
     require("trouble").setup()
   end
 }

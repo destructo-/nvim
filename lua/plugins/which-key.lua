@@ -6,13 +6,13 @@ return {
 
       { "<leader>a", group = "AI", icon = { icon = " " } },
       { "<leader>l", group = "LSP", icon = { icon = " ", color = "blue" } },
-      { "<leader>m", group = "Metals", icon = { icon = "", color = "red" } },
+      { "<leader>m", group = "Metals", icon = { icon = "", color = "red" } },
       { "<leader>t", group = "Tree", icon = { icon = "" } },
       { "<leader>o", group = "Open", icon = { icon = "" } },
       { "<leader>f", group = "Find" },
       { "<leader>b", group = "Buffer" },
       { "<leader>g", group = "Git" },
-      { "<leader>e", group = "Diagnostic" },
+      { "<leader>e", group = "Errors", icon = { icon = "", color = "red"} },
 
       { "<leader>ol", '<CMD>:Lazy<CR>', desc = "Lazy plugin manager" },
     }

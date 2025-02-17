@@ -6,13 +6,14 @@ return {
     'nvim-lua/plenary.nvim',
     'mfussenegger/nvim-dap'
   },
+  ft = { "scala", "sbt", "java" },
   keys = {
     { '<leader>mi', '<CMD>MetalsImportBuild<CR>', desc = "Import build" },
     { '<leader>ms', '<CMD>MetalsScanSources<CR>', desc = "Scan sources" },
     { '<leader>mS', '<CMD>MetalsRunDoctor<CR>', desc = "Status" },
     { '<leader>mC', '<CMD>MetalsCompileClean<CR>', desc = "Clean compile" },
   },
-  init = function()
+  config = function()
     local metals_config = require("metals").bare_config()
 
     -- Example of settings

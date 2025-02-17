@@ -2,6 +2,7 @@
 
 return {
   "lewis6991/gitsigns.nvim",
+  event = { "BufReadPre", "BufNewFile" },
   keys = {
     { '<leader>gb', '<CMD>Gitsigns blame<CR>',               desc = "Blame" },
     { '<leader>gl', '<CMD>Gitsigns blame_line<CR>',          desc = "Blame line" },
@@ -11,10 +12,9 @@ return {
     { '<leader>gk', '<CMD>Gitsigns prev_hunk<CR>',           desc = "Go to previous hunk" },
     { '<leader>gp', '<CMD>Gitsigns preview_hunk_inline<CR>', desc = "Preview hunk" },
   },
-  init = function()
-    require("gitsigns").setup()
-  end,
   config = function()
+    require('gitsigns').setup()
+
     vim.api.nvim_create_autocmd('FileType', {
       desc = 'remove rudiment symbols from blame buffer',
       pattern = 'gitsigns-blame',

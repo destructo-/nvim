@@ -3,7 +3,11 @@
 -- Telescope is centered around modularity, allowing for easy customization.
 
 return {
+  lazy = false,
   "nvim-telescope/telescope.nvim",
+  dependencies = {
+    'nvim-telescope/telescope-ui-select.nvim'
+  },
   main = "telescope.builtin",
   keys = {
     {
@@ -64,5 +68,16 @@ return {
       '<CMD>lua require("telescope.builtin").git_commits()<CR>',
       desc = 'Commits',
     }
-  }
+  },
+  config = function()
+    require("telescope").setup({
+      extensions = {
+        ["ui-select"] = {
+          require("telescope.themes").get_dropdown()
+        }
+      }
+    })
+    -- TODO load on <leader>la (lsp code actions)
+    require("telescope").load_extension("ui-select")
+  end
 }
