@@ -3,12 +3,13 @@
 
 return {
   "folke/trouble.nvim",
+  cmd = { "Trouble" },
   keys = {
-    { "<leader>el", "<cmd>Trouble diagnostics toggle<CR>",     desc = "Error list toggle" },
-    { "<leader>ej", "<cmd>lua vim.diagnostic.goto_next()<CR>", desc = "Go to next error" },
-    { "<leader>ek", "<cmd>lua vim.diagnostic.goto_prev()<CR>", desc = "Go to previous error" }
+    { "<leader>el", "<CMD>Trouble diagnostics toggle<CR>",     desc = "Error list toggle" },
+    { "<leader>ej", "<CMD>lua vim.diagnostic.goto_next()<CR>", desc = "Go to next error" },
+    { "<leader>ek", "<CMD>lua vim.diagnostic.goto_prev()<CR>", desc = "Go to previous error" }
   },
-  congig = function()
+  config = function()
     require("trouble").setup()
   end
 }

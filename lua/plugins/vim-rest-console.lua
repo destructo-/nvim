@@ -11,7 +11,7 @@ vim.g.vrc_auto_format_response_patterns = {
 
 return {
   'diepm/vim-rest-console',
-  lazy = false,
+  ft = { "rest" },
   keys = {
     { "<leader>r", "<CMD>call VrcQuery()<CR><CR>", desc = "Send HTTP request" }
   }

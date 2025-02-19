@@ -54,6 +54,6 @@ return {
     icons = {
       separator = "",
       group = "+ "
-    }
+    },
   }
 }

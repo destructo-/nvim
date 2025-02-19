@@ -1,4 +1,4 @@
--- telescope.nvim is a highly extendable fuzzy finder over lists.
+--File telescope.nvim is a highly extendable fuzzy finder over lists.
 -- Built on the latest awesome features from neovim core.
 -- Telescope is centered around modularity, allowing for easy customization.
 
@@ -47,27 +47,6 @@ return {
       '<CMD>lua require("telescope.builtin").buffers()<CR>',
       desc = 'Show list',
     },
-    -- git
-    {
-      '<leader>gs',
-      '<CMD>lua require("telescope.builtin").git_status()<CR>',
-      desc = 'Show status',
-    },
-    {
-      '<leader>gS',
-      '<CMD>lua require("telescope.builtin").git_stash()<CR>',
-      desc = 'Show stash',
-    },
-    {
-      '<leader>gc',
-      '<CMD>lua require("telescope.builtin").git_bcommits()<CR>',
-      desc = 'Commits in buffer',
-    },
-    {
-      '<leader>gC',
-      '<CMD>lua require("telescope.builtin").git_commits()<CR>',
-      desc = 'Commits',
-    }
   },
   config = function()
     require("telescope").setup({
