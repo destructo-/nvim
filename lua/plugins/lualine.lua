@@ -10,20 +10,23 @@ local clients_lsp = function()
 
   local c = {}
   for _, client in pairs(clients) do
-    table.insert(c, client.name)
+    if client.name ~= "copilot" then
+      table.insert(c, client.name)
+    end
   end
-  return '\u{f085} ' .. table.concat(c, '|')
+  return '\u{f085} ' .. table.concat(c, '/')
 end
 
 return {
   "nvim-lualine/lualine.nvim",
+  dependencies = { "AndreM222/copilot-lualine" },
   opts = {
     options = {
       component_separators = { left = '|', right = '|' },
       section_separators = { left = '', right = '' },
     },
     sections = {
-      lualine_x = { clients_lsp, 'encoding', 'filetype' }
+      lualine_x = { clients_lsp, { 'copilot', show_colors = true }, 'encoding', 'filetype' }
     }
   }
 }
