@@ -3,7 +3,7 @@
 return {
   "j-hui/fidget.nvim",
   keys = {
-    { "<leader>n", "<CDM>:Fidget history<CR>", desc = "Notifications history" }
+    { "<leader>en", "<CDM>:Fidget history<CR>", desc = "Notifications history" }
   },
   init = function()
     require("fidget").setup({

@@ -47,3 +47,13 @@ package manager setup
 
 general setup for lsp
 ``/lua/config/lsp-base.lua``
+
+## language servers
+automatically installs and setups 
+
+by `Mason`
+`haskell-language-server`
+`lua-language-server`
+
+by configuration
+`scala metals`

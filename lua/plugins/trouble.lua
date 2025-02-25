@@ -5,9 +5,9 @@ return {
   "folke/trouble.nvim",
   cmd = { "Trouble" },
   keys = {
-    { "<leader>el", "<CMD>Trouble diagnostics toggle<CR>",     desc = "Error list toggle" },
-    { "<leader>ej", "<CMD>lua vim.diagnostic.goto_next()<CR>", desc = "Go to next error" },
-    { "<leader>ek", "<CMD>lua vim.diagnostic.goto_prev()<CR>", desc = "Go to previous error" }
+    { "<leader>dl", "<CMD>Trouble diagnostics toggle<CR>",     desc = "Error list toggle" },
+    { "<leader>dj", "<CMD>lua vim.diagnostic.goto_next()<CR>", desc = "Go to next error" },
+    { "<leader>dk", "<CMD>lua vim.diagnostic.goto_prev()<CR>", desc = "Go to previous error" }
   },
   config = function()
     require("trouble").setup()

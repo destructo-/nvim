@@ -2,19 +2,20 @@ return {
   "folke/which-key.nvim",
   init = function()
     require("which-key").add {
-      { "<leader>v", "<cmd>vsplit<CR>", desc = "Split vertical", icon = { icon = "" } },
-
       { "<leader>a", group = "AI", icon = { icon = " " } },
+      { "<leader>e", group = "Editor", icon = { icon = "󰤌" } },
       { "<leader>l", group = "LSP", icon = { icon = " ", color = "blue" } },
       { "<leader>m", group = "Metals", icon = { icon = "", color = "red" } },
       { "<leader>t", group = "Tree", icon = { icon = "" } },
       { "<leader>o", group = "Open", icon = { icon = "" } },
       { "<leader>f", group = "Find" },
-      { "<leader>b", group = "Buffer" },
       { "<leader>g", group = "Git" },
-      { "<leader>e", group = "Errors", icon = { icon = "", color = "red"} },
+      { "<leader>d", group = "Diagnostic", icon = { icon = "", color = "red"} },
 
       { "<leader>ol", '<CMD>:Lazy<CR>', desc = "Lazy plugin manager" },
+
+      { "<leader>ev", "<CMD>vsplit<CR>", desc = "Split vertical", icon = { icon = "" } },
+      { "<leader>ex", "<CMD>split<CR>", desc = "Split vertical", icon = { icon = "" } },
     }
   end,
   opts = {

@@ -4,6 +4,6 @@
 return {
   "norcalli/nvim-colorizer.lua",
   keys = {
-    { '<leader>c', '<CMD>ColorizerToggle<CR>', desc = "Toggle show colors" }
+    { '<leader>ec', '<CMD>ColorizerToggle<CR>', desc = "Toggle show colors" }
   }
 }
