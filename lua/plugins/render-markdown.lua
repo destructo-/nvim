@@ -1,3 +1,9 @@
 -- Plugin to improve viewing Markdown files in Neovim
 
-require('render-markdown').setup({})
+return {
+  'MeanderingProgrammer/render-markdown.nvim',
+  ft = "markdown",
+  dependencies = {
+    'echasnovski/mini.nvim'
+  }
+}

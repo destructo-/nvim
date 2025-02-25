@@ -9,14 +9,10 @@ vim.g.vrc_auto_format_response_patterns = {
   json = "jq"
 }
 
-local wk = require("which-key")
-wk.add {
-  {
-    "<leader>r",
-    "<cmd>call VrcQuery()<CR><CR>",
-    desc = "Send HTTP request",
-    icon = {
-      icon = "󱀹"
-    },
+return {
+  'diepm/vim-rest-console',
+  ft = { "rest" },
+  keys = {
+    { "<leader>r", "<CMD>call VrcQuery()<CR><CR>", desc = "Send HTTP request" }
   }
 }

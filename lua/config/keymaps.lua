@@ -1,6 +1,3 @@
--- base keymaps
-vim.g.mapleader = " "
-
 vim.keymap.set("n", "<m-h>", "<C-w>h", {})
 vim.keymap.set("n", "<m-j>", "<C-w>j", {})
 vim.keymap.set("n", "<m-k>", "<C-w>k", {})

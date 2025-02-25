@@ -1,3 +1,23 @@
+local function border(hl_name)
+  return {
+    { "╭", hl_name },
+    { "─", hl_name },
+    { "╮", hl_name },
+    { "│", hl_name },
+    { "╯", hl_name },
+    { "─", hl_name },
+    { "╰", hl_name },
+    { "│", hl_name }
+  }
+end
+
+vim.diagnostic.config {
+  float = { border = border "CmpDocumentationBorder" },
+  virtual_text = {
+    prefix = '●',
+  }
+}
+
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
   vim.lsp.handlers.hover,
   { border = "rounded" }
@@ -37,42 +57,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 
-local wk = require("which-key")
 
-wk.add {
-  {
-    '<leader>lf',
-    '<CMD>lua vim.lsp.buf.format({ async = true })<CR>',
-    desc = "Code format"
-  },
-  {
-    '<leader>la',
-    '<CMD>lua vim.lsp.buf.code_action()<CR>',
-    desc = "Code actions"
-  },
-  {
-    '<leader>lr',
-    '<CMD>lua vim.lsp.buf.rename()<CR>',
-    desc = "Rename"
-  },
-  {
-    '<leader>lD',
-    '<CMD>lua vim.lsp.buf.type_definition()<CR>',
-    desc = "Type defenition"
-  },
-  {
-    '<leader>ll',
-    '<CMD>lua vim.lsp.codelens.run()<CR>',
-    desc = "Code lense"
-  },
-  {
-    '<leader>lS',
-    '<CMD>LspStop<CR>',
-    desc = "Stop LSP service"
-  },
-  {
-    '<leader>lR',
-    '<CMD>LspStart<CR>',
-    desc = "Run LSP srver"
-  }
-}

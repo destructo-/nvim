@@ -1,3 +1,5 @@
 -- by default save all changes when you leave insert mode
 
-require("auto-save").setup()
+return {
+  "Pocco81/auto-save.nvim"
+}

@@ -22,26 +22,38 @@ open nvim there
 ```bash
 nvim .
 ```
-open `lua/main/packer.lua`
-
-```vim
-:so
-```
-```vim
-:PackerSync
-```
+all plugins and configuration will download and apply automatically
 
 restart nvim
 
 ## Structure
-main settings
-``/lua/main/*``
-
 plugins setup
-``/plugins/*``
-
-main key mappings
-``/lua/main/remap.lua``
+``/lua/plugins/*``
 
 main settings
-``/lua/main/set.lua``
+``/lua/config/*``
+
+general key mappings
+``/lua/config/keymaps.lua``
+
+general settings
+``/lua/config/options.lua``
+
+general autocmds
+``/lua/config/autocmds.lua``
+
+package manager setup
+``/lua/config/lazy.lua``
+
+general setup for lsp
+``/lua/config/lsp-base.lua``
+
+## language servers
+automatically installs and setups 
+
+by `Mason`
+`haskell-language-server`
+`lua-language-server`
+
+by configuration
+`scala metals`

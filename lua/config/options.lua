@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 vim.opt.number = true
 
 vim.opt.expandtab = true
@@ -17,7 +20,8 @@ vim.opt.signcolumn = "yes"
 vim.opt.list = true
 vim.opt.listchars:append "eol:¬"
 vim.opt.listchars:append "space:⋅"
+vim.opt.fillchars:append { diff = "╱" }
 
 vim.opt.cursorline = true
 
--- vim.opt_global.updatetime = 600
+vim.opt.foldmethod = "manual"
