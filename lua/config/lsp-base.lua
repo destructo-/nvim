@@ -11,13 +11,6 @@ local function border(hl_name)
   }
 end
 
-vim.diagnostic.config {
-  float = { border = border "CmpDocumentationBorder" },
-  virtual_text = {
-    prefix = '●',
-  }
-}
-
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
   vim.lsp.handlers.hover,
   { border = "rounded" }

@@ -25,3 +25,6 @@ vim.opt.fillchars:append { diff = "╱" }
 vim.opt.cursorline = true
 
 vim.opt.foldmethod = "manual"
+
+-- vim.opt.mouse = ""
+-- vim.opt.mousescroll = "ver:0,hor:0"

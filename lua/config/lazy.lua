@@ -30,6 +30,11 @@ require("lazy").setup({
       end
     },
     { import = "plugins" },
+    { import = "plugins.editor" },
+    { import = "plugins.git" },
+    { import = "plugins.ui-improvements" },
+    { import = "plugins.extensions" },
+    { import = "plugins.diagnostic" }
   },
   -- it doesn't work for nightfox
   install = { colorscheme = { "duskfox" } },

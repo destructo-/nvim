@@ -1,3 +1,21 @@
+local function toggleNumbersView()
+  if vim.opt.number:get() then
+    vim.opt.number = false
+    vim.opt.relativenumber = true
+  else
+    vim.opt.number = true
+    vim.opt.relativenumber = false
+  end
+end
+
+local function toggleWrapLines()
+  if vim.opt.wrap:get() then
+    vim.opt.wrap = false
+  else
+    vim.opt.wrap = true
+  end
+end
+
 return {
   "folke/which-key.nvim",
   init = function()
@@ -10,12 +28,15 @@ return {
       { "<leader>o", group = "Open", icon = { icon = "" } },
       { "<leader>f", group = "Find" },
       { "<leader>g", group = "Git" },
-      { "<leader>d", group = "Diagnostic", icon = { icon = "", color = "red"} },
+      { "<leader>d", group = "Diagnostic", icon = { icon = "", color = "red" } },
 
       { "<leader>ol", '<CMD>:Lazy<CR>', desc = "Lazy plugin manager" },
 
       { "<leader>ev", "<CMD>vsplit<CR>", desc = "Split vertical", icon = { icon = "" } },
       { "<leader>ex", "<CMD>split<CR>", desc = "Split vertical", icon = { icon = "" } },
+      { "<leader>en", toggleNumbersView, desc = "Numbers view toggle" },
+      { "<leader>el", toggleWrapLines, desc = "Lines wrap toggle" },
+      { "<leader>eh", "<CMD>noh<CR>", desc = "Clear search highlightning", icon = { icon = "󰎟" } }
     }
   end,
   opts = {

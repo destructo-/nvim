@@ -53,7 +53,13 @@ return {
       '<leader>fd',
       '<CMD>lua require("telescope.builtin").lsp_document_symbols()<CR>',
       desc = 'Show defenitions',
-    }
+    },
+    -- notifications
+    {
+      '<leader>fn',
+      '<CMD>lua require("telescope").extensions.fidget.fidget()<CR>',
+      desc = 'Show notifications',
+    },
   },
   config = function()
     local function filenameFirst(_, path)
@@ -95,6 +101,7 @@ return {
           path_display = filenameFirst,
           sort_lastused = true,
           previewer = false,
+          initial_mode = "normal",
           theme = "dropdown",
           mappings = {
             i = { ["<c-d>"] = actions.delete_buffer },
@@ -109,10 +116,11 @@ return {
       },
       extensions = {
         ["ui-select"] = {
-          require("telescope.themes").get_dropdown()
+          require("telescope.themes").get_dropdown({ initial_mode = "normal" })
         }
       }
     })
     require("telescope").load_extension("ui-select")
+    require("telescope").load_extension("fidget")
   end
 }
