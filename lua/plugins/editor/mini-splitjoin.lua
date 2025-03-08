@@ -1,7 +1,7 @@
 return {
   'echasnovski/mini.splitjoin',
   keys = {
-    { '<leader>es', '<CMD>lua require("mini.splitjoin").toggle()<CR>', desc = "Split join toggle" },
+    { '<leader>es', '<CMD>lua require("mini.splitjoin").toggle()<CR>', desc = " [s]plit join toggle" },
   },
   config = function()
     local split_join = {

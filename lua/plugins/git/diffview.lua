@@ -3,11 +3,11 @@ return {
   dependencies = { "nvim-lua/plenary.nvim" },
   cmd = { "DiffviewOpen", "DiffviewFileHistory" },
   keys = {
-    { "<leader>gh", "<CMD>DiffviewFileHistory %<CR>",                           desc = "File history" },
-    { "<leader>gH", "<CMD>DiffviewFileHistory<CR>",                             desc = "History" },
-    { "<leader>gs", "<CMD>DiffviewOpen<CR>",                                    desc = "Status" },
-    { "<leader>gD", "<CMD>DiffviewOpen origin/master...HEAD --imply-local<CR>", desc = "Diff with master" },
-    { "<leader>gc", "<CMD>DiffviewClose<CR>",                                   desc = "Close diff buffers" },
+    { "<leader>gh", "<CMD>DiffviewFileHistory %<CR>",                           desc = " [h]istory for file" },
+    { "<leader>gH", "<CMD>DiffviewFileHistory<CR>",                             desc = " [H]istory for project" },
+    { "<leader>gs", "<CMD>DiffviewOpen<CR>",                                    desc = " [s]tatus" },
+    { "<leader>gD", "<CMD>DiffviewOpen origin/master...HEAD --imply-local<CR>", desc = " [D]iff with master" },
+    { "<leader>gc", "<CMD>DiffviewClose<CR>",                                   desc = " [c]lose diff buffers" },
   },
   opts = {
     enhanced_diff_hl = true,

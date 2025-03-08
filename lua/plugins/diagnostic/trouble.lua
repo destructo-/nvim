@@ -8,7 +8,7 @@ return {
     "folke/trouble.nvim",
     cmd = { "Trouble" },
     keys = {
-      { "<leader>dl", "<CMD>Trouble diagnostics toggle<CR>", desc = "Error list toggle" },
+      { "<leader>de", "<CMD>Trouble diagnostics toggle<CR>", desc = " [e]rror list toggle" },
     },
     config = function()
       require("trouble").setup()

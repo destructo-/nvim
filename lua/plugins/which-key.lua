@@ -20,23 +20,23 @@ return {
   "folke/which-key.nvim",
   init = function()
     require("which-key").add {
-      { "<leader>a", group = "AI", icon = { icon = " " } },
-      { "<leader>e", group = "Editor", icon = { icon = "󰤌" } },
-      { "<leader>l", group = "LSP", icon = { icon = " ", color = "blue" } },
-      { "<leader>m", group = "Metals", icon = { icon = "", color = "red" } },
-      { "<leader>t", group = "Tree", icon = { icon = "" } },
-      { "<leader>o", group = "Open", icon = { icon = "" } },
-      { "<leader>f", group = "Find" },
-      { "<leader>g", group = "Git" },
-      { "<leader>d", group = "Diagnostic", icon = { icon = "", color = "red" } },
+      { "<leader>a", group = "[a]I", icon = { icon = " " } },
+      { "<leader>e", group = "[e]ditor", icon = { icon = "󰤌" } },
+      { "<leader>l", group = "[l]SP", icon = { icon = " ", color = "blue" } },
+      { "<leader>m", group = "[m]etals", icon = { icon = "", color = "red" } },
+      { "<leader>t", group = "[t]ree", icon = { icon = "" } },
+      { "<leader>o", group = "[o]pen", icon = { icon = "" } },
+      { "<leader>f", group = "[f]ind", icon = { icon = ""} },
+      { "<leader>g", group = "[g]it", icon = { icon = "󰊢", color = "red"} },
+      { "<leader>d", group = "[d]iagnostic", icon = { icon = "", color = "red" } },
 
-      { "<leader>ol", '<CMD>:Lazy<CR>', desc = "Lazy plugin manager" },
+      { "<leader>ol", '<CMD>:Lazy<CR>', desc = " [l]azy plugin manager" },
 
-      { "<leader>ev", "<CMD>vsplit<CR>", desc = "Split vertical", icon = { icon = "" } },
-      { "<leader>ex", "<CMD>split<CR>", desc = "Split vertical", icon = { icon = "" } },
-      { "<leader>en", toggleNumbersView, desc = "Numbers view toggle" },
-      { "<leader>el", toggleWrapLines, desc = "Lines wrap toggle" },
-      { "<leader>eh", "<CMD>noh<CR>", desc = "Clear search highlightning", icon = { icon = "󰎟" } }
+      { "<leader>ev", "<CMD>vsplit<CR>", desc = " [v]ertical split", icon = { icon = "" } },
+      { "<leader>eh", "<CMD>split<CR>", desc = " [h]orizontal split", icon = { icon = "" } },
+      { "<leader>en", toggleNumbersView, desc = " [n]umbers view toggle" },
+      { "<leader>el", toggleWrapLines, desc = " [l]ines wrap toggle" },
+      { "<leader>ec", "<CMD>noh<CR>", desc = " [c]lear search highlightning", icon = { icon = "󰎟" } }
     }
   end,
   opts = {

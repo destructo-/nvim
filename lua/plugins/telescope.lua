@@ -14,51 +14,51 @@ return {
     {
       '<leader>ff',
       '<CMD>lua require("telescope.builtin").find_files({ file_ignore_patterns = { "target/" } })<CR>',
-      desc = "Find files"
+      desc = " [f]iles"
     },
     {
       '<leader>ft',
       '<CMD>Telescope live_grep<CR>',
-      desc = "Find Text",
+      desc = " [t]ext",
     },
     {
       '<leader>fs',
       '<CMD>lua require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") })<CR>',
-      desc = 'Find String',
+      desc = " [s]tring",
     },
     {
       '<leader>fh',
       '<CMD>Telescope help_tags<CR>',
-      desc = "Find help",
+      desc = " [h]elp",
     },
     {
       '<leader>fl',
       '<CMD>Telescope resume<CR>',
-      desc = 'Last Search',
+      desc = ' [l]ast search',
     },
     -- metals
     {
       '<leader>mc',
       '<CMD>Telescope metals commands<CR>',
-      desc = 'Commands',
+      desc = ' [c]ommands',
     },
     -- buffers
     {
       '<leader>fb',
       '<CMD>lua require("telescope.builtin").buffers()<CR>',
-      desc = 'Show list',
+      desc = ' [b]uffers list',
     },
     -- symbols
     {
       '<leader>fd',
       '<CMD>lua require("telescope.builtin").lsp_document_symbols()<CR>',
-      desc = 'Show defenitions',
+      desc = ' [d]efenitions',
     },
     -- notifications
     {
       '<leader>fn',
       '<CMD>lua require("telescope").extensions.fidget.fidget()<CR>',
-      desc = 'Show notifications',
+      desc = ' [n]otifications',
     },
   },
   config = function()

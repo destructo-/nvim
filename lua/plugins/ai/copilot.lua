@@ -2,8 +2,8 @@ return {
   "zbirenbaum/copilot.lua",
   cmd = "Copilot",
   keys = {
-    { "<leader>ac", "<CMD>Copilot auth<CR>",   desc = "Copilot auth and run" },
-    { "<leader>at", "<CMD>Copilot toggle<CR>", desc = "Copilot toggle" }
+    { "<leader>aa", "<CMD>Copilot auth<CR>",   desc = " [a]uth and run" },
+    { "<leader>as", "<CMD>Copilot toggle<CR>", desc = " [s]ession toggle" }
   },
   event = "InsertEnter",
   config = function()

@@ -3,7 +3,7 @@
 return {
   "voldikss/vim-floaterm",
   keys = {
-    { '<leader>s', '<CMD>FloatermToggle<CR>', desc = "Shell toggle" }
+    { '<leader>s', '<CMD>FloatermToggle<CR>', desc = " [s]hell toggle" }
   },
   config = function()
     vim.g.floaterm_width = 0.9

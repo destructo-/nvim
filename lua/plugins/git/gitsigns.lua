@@ -4,15 +4,14 @@ return {
   "lewis6991/gitsigns.nvim",
   event = { "WinEnter", "BufReadPre", "BufNewFile" },
   keys = {
-    { '<leader>gb', '<CMD>Gitsigns blame_line<CR>',     desc = "Blame line" },
-    { '<leader>gB', '<CMD>Gitsigns blame<CR>',          desc = "Blame" },
-    { '<leader>gr', '<CMD>Gitsigns reset_hunk<CR>',     desc = "Reset hunk" },
-    { '<leader>gd', '<CMD>Gitsigns toggle_deleted<CR>', desc = "Toggle deleted" },
-    { '<leader>gj', '<CMD>Gitsigns next_hunk<CR>',      desc = "Go to next hunk" },
-    { '<leader>gk', '<CMD>Gitsigns prev_hunk<CR>',      desc = "Go to previous hunk" },
-    { '<leader>gp', '<CMD>Gitsigns preview_hunk<CR>',   desc = "Preview hunk" },
-    { '<leader>gl', '<CMD>Gitsigns setqflist<CR>',      desc = "File hunks" },
-    { '<leader>gL', '<CMD>Gitsigns setqflist all<CR>',  desc = "All hunks" },
+    { '<leader>gb', '<CMD>Gitsigns blame<CR>',          desc = " [b]lame" },
+    { '<leader>gr', '<CMD>Gitsigns reset_hunk<CR>',     desc = " [r]eset hunk" },
+    { '<leader>gd', '<CMD>Gitsigns toggle_deleted<CR>', desc = " [d]eleted toggle" },
+    { '<leader>gj', '<CMD>Gitsigns next_hunk<CR>',      desc = " [j] next hunk" },
+    { '<leader>gk', '<CMD>Gitsigns prev_hunk<CR>',      desc = " [k] previous hunk" },
+    { '<leader>gp', '<CMD>Gitsigns preview_hunk<CR>',   desc = " [p]review hunk" },
+    { '<leader>gl', '<CMD>Gitsigns setqflist<CR>',      desc = " [l]ist file hunks" },
+    { '<leader>gL', '<CMD>Gitsigns setqflist all<CR>',  desc = " [L]ist project hunks" },
   },
   config = function()
     vim.cmd [[ :hi GitSignsCurrentLineBlame guifg=#817c9c ]]
