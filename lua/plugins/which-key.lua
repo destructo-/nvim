@@ -1,10 +1,8 @@
 local function toggleNumbersView()
-  if vim.opt.number:get() then
-    vim.opt.number = false
-    vim.opt.relativenumber = true
-  else
-    vim.opt.number = true
+  if vim.opt.relativenumber:get() then
     vim.opt.relativenumber = false
+  else
+    vim.opt.relativenumber = true
   end
 end
 

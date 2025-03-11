@@ -25,9 +25,10 @@ return {
     },
     build = "make tiktoken", -- Only on MacOS or Linux
     opts = {
-      question_header = '  ', -- Header to use for user questions
-      answer_header = '  ', -- Header to use for AI answers
-      error_header = '  ', -- Header to use for errors
+      show_help = false,
+      question_header = '  ', -- Header to use for user questions
+      answer_header = '  ', -- Header to use for AI answers
+      error_header = '  ', -- Header to use for errors
       separator = '───', -- Separator to use in chat
     },
   },
