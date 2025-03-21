@@ -11,30 +11,41 @@ return {
     {
       '<leader>tt',
       '<CMD>lua require("nvim-tree.api").tree.toggle({ find_file = true })<CR>',
-      desc = "Toggle tree"
+      desc = " [t]oggle"
     },
     {
       '<leader>tc',
       '<CMD>lua require("nvim-tree.api").tree.collapse_all()<CR>',
-      desc = "Collapse all"
+      desc = " [c]ollapse all"
     },
     {
       '<leader>tf',
       '<CMD>lua require("nvim-tree.api").tree.find_file()<CR>',
-      desc = "Focus current file"
+      desc = " [f]ind current file"
     },
     {
       '<leader>to',
       '<CMD>lua require("nvim-tree.api").tree.open({ find_file = true })<CR>',
-      desc = "Open and go to current file"
+      desc = " [o]pen current file"
+    },
+    {
+      '<leader>tE',
+      '<CMD>lua require("nvim-tree.api").tree.expand_all()<CR>',
+      desc = " [E]xpand all"
     },
     {
       '<leader>tg',
       '<CMD>lua require("nvim-tree.api").node.open.toggle_group_empty()<CR>',
-      desc = "Toggle folder groups"
+      desc = " [g]roups toggle"
     },
   },
   opts = {
+    on_attach = function(bufnr)
+      local api = require("nvim-tree.api")
+      api.config.mappings.default_on_attach(bufnr)
+      -- disable live filter to use 'hop' insted of this
+      vim.keymap.del("n", "f", { buffer = bufnr })
+    end,
     renderer = {
       indent_markers = {
         enable = true

@@ -26,7 +26,36 @@ return {
       section_separators = { left = '', right = '' },
     },
     sections = {
+      lualine_c = {},
       lualine_x = { clients_lsp, { 'copilot', show_colors = true }, 'encoding', 'filetype' }
+    },
+    tabline = {
+      lualine_z = {
+        {
+          'buffers',
+          buffers_color = {
+            active = 'lualine_b_diff_add_normal', -- Color for active buffer.
+          },
+          symbols = {
+            modified = ' ●',
+            alternate_file = '',
+            directory = '',
+          },
+        }
+      },
+      lualine_b = {},
+      lualine_c = {},
+      lualine_x = {},
+      lualine_y = {},
+      lualine_a = {
+        {
+          'tabs',
+          mode = 0,
+          tabs_color = {
+            active = 'lualine_b_diff_add_normal', -- Color for active buffer.
+          },
+        }
+      },
     }
   }
 }

@@ -8,16 +8,21 @@ return {
   },
   ft = { "scala", "sbt", "java" },
   keys = {
-    { '<leader>mi', '<CMD>MetalsImportBuild<CR>', desc = "Import build" },
-    { '<leader>ms', '<CMD>MetalsScanSources<CR>', desc = "Scan sources" },
-    { '<leader>mS', '<CMD>MetalsRunDoctor<CR>', desc = "Status" },
-    { '<leader>mC', '<CMD>MetalsCompileClean<CR>', desc = "Clean compile" },
+    { '<leader>ma', '<CMD>MetalsAnalyzeStacktrace<CR>', desc = " [a]nalyze stacktrace" },
+    { '<leader>ml', '<CMD>MetalsToggleLogs<CR>', desc = " [l]ogs toggle" },
+    { '<leader>mi', '<CMD>MetalsImportBuild<CR>', desc = " [i]mport build" },
+    { '<leader>ms', '<CMD>MetalsScanSources<CR>', desc = " [s]can sources" },
+    { '<leader>mS', '<CMD>MetalsRunDoctor<CR>', desc = " [S]tatus" },
+    { '<leader>mC', '<CMD>MetalsCompileClean<CR>', desc = " [C]lean compile" },
   },
   config = function()
     local metals_config = require("metals").bare_config()
 
     -- Example of settings
     metals_config.settings = {
+      showInferredType = true,
+      superMethodLensesEnabled = true,
+      showImplicitConversionsAndClasses = true,
       showImplicitArguments = true,
       excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
     }

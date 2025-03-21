@@ -14,46 +14,52 @@ return {
     {
       '<leader>ff',
       '<CMD>lua require("telescope.builtin").find_files({ file_ignore_patterns = { "target/" } })<CR>',
-      desc = "Find files"
+      desc = " [f]iles"
     },
     {
       '<leader>ft',
       '<CMD>Telescope live_grep<CR>',
-      desc = "Find Text",
+      desc = " [t]ext",
     },
     {
       '<leader>fs',
       '<CMD>lua require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") })<CR>',
-      desc = 'Find String',
+      desc = " [s]tring",
     },
     {
       '<leader>fh',
       '<CMD>Telescope help_tags<CR>',
-      desc = "Find help",
+      desc = " [h]elp",
     },
     {
       '<leader>fl',
       '<CMD>Telescope resume<CR>',
-      desc = 'Last Search',
+      desc = ' [l]ast search',
     },
     -- metals
     {
       '<leader>mc',
       '<CMD>Telescope metals commands<CR>',
-      desc = 'Commands',
+      desc = ' [c]ommands',
     },
     -- buffers
     {
       '<leader>fb',
       '<CMD>lua require("telescope.builtin").buffers()<CR>',
-      desc = 'Show list',
+      desc = ' [b]uffers list',
     },
     -- symbols
     {
       '<leader>fd',
       '<CMD>lua require("telescope.builtin").lsp_document_symbols()<CR>',
-      desc = 'Show defenitions',
-    }
+      desc = ' [d]efenitions',
+    },
+    -- notifications
+    {
+      '<leader>fn',
+      '<CMD>lua require("telescope").extensions.fidget.fidget()<CR>',
+      desc = ' [n]otifications',
+    },
   },
   config = function()
     local function filenameFirst(_, path)
@@ -77,6 +83,12 @@ return {
     local actions_layout = require("telescope.actions.layout")
     require("telescope").setup({
       defaults = {
+        cache_picker = { num_pickers = 10 },
+        dynamic_preview_title = true,
+        layout_strategy = "vertical",
+        layout_config = { vertical = { width = 0.9, height = 0.9, preview_height = 0.6, preview_cutoff = 0 } },
+        path_display = { "smart", shorten = { len = 3 } },
+        wrap_results = false,
         mappings = {
           i = {
             ["<c-p>"] = actions_layout.toggle_preview,
@@ -95,6 +107,7 @@ return {
           path_display = filenameFirst,
           sort_lastused = true,
           previewer = false,
+          initial_mode = "normal",
           theme = "dropdown",
           mappings = {
             i = { ["<c-d>"] = actions.delete_buffer },
@@ -109,10 +122,13 @@ return {
       },
       extensions = {
         ["ui-select"] = {
-          require("telescope.themes").get_dropdown()
+          require("telescope.themes").get_dropdown({
+            initial_mode = "normal",
+          })
         }
       }
     })
     require("telescope").load_extension("ui-select")
+    require("telescope").load_extension("fidget")
   end
 }

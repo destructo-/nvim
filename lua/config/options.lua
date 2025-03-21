@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 vim.opt.number = true
+vim.opt.wrap = false
 
 vim.opt.expandtab = true
 vim.opt.softtabstop = 2
@@ -25,3 +26,9 @@ vim.opt.fillchars:append { diff = "╱" }
 vim.opt.cursorline = true
 
 vim.opt.foldmethod = "manual"
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- vim.opt.mouse = ""
+-- vim.opt.mousescroll = "ver:0,hor:0"

@@ -42,7 +42,7 @@ return {
     lazy = false,
     priority = 900,
     keys = {
-      { '<leader>om', '<CMD>:Mason<CR>', desc = "Mason language servers manager" }
+      { '<leader>om', '<CMD>:Mason<CR>', desc = " [m]ason language servers manager" }
     },
     init = function()
       require("mason").setup()
@@ -62,13 +62,13 @@ return {
     "neovim/nvim-lspconfig",
     main = "lspconfig",
     keys = {
-      { '<leader>lf', '<CMD>lua vim.lsp.buf.format({ async = true })<CR>', desc = "Code format" },
-      { '<leader>la', '<CMD>lua vim.lsp.buf.code_action()<CR>',            desc = "Code actions" },
-      { '<leader>lr', '<CMD>lua vim.lsp.buf.rename()<CR>',                 desc = "Rename" },
-      { '<leader>lD', '<CMD>lua vim.lsp.buf.type_definition()<CR>',        desc = "Type defenition" },
-      { '<leader>ll', '<CMD>lua vim.lsp.codelens.run()<CR>',               desc = "Code lense" },
-      { '<leader>lS', '<CMD>LspStop<CR>',                                  desc = "Stop LSP service" },
-      { '<leader>lR', '<CMD>LspStart<CR>',                                 desc = "Run LSP srver" }
+      { '<leader>lf', '<CMD>lua vim.lsp.buf.format({ async = true })<CR>', desc = " [f]ormat code" },
+      { '<leader>la', '<CMD>lua vim.lsp.buf.code_action()<CR>',            desc = " [a]ctions" },
+      { '<leader>lr', '<CMD>lua vim.lsp.buf.rename()<CR>',                 desc = " [r]ename" },
+      { '<leader>lt', '<CMD>lua vim.lsp.buf.type_definition()<CR>',        desc = " [t]ype defenition" },
+      { '<leader>ll', '<CMD>lua vim.lsp.codelens.run()<CR>',               desc = " [l]ense code" },
+      { '<leader>lS', '<CMD>LspStop<CR>',                                  desc = " [S]top LSP service" },
+      { '<leader>lR', '<CMD>LspStart<CR>',                                 desc = " [R]un LSP srver" }
     }
   }
 }
