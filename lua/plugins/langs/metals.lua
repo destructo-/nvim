@@ -8,6 +8,8 @@ return {
   },
   ft = { "scala", "sbt", "java" },
   keys = {
+    { '<leader>ma', '<CMD>MetalsAnalyzeStacktrace<CR>', desc = " [a]nalyze stacktrace" },
+    { '<leader>ml', '<CMD>MetalsToggleLogs<CR>', desc = " [l]ogs toggle" },
     { '<leader>mi', '<CMD>MetalsImportBuild<CR>', desc = " [i]mport build" },
     { '<leader>ms', '<CMD>MetalsScanSources<CR>', desc = " [s]can sources" },
     { '<leader>mS', '<CMD>MetalsRunDoctor<CR>', desc = " [S]tatus" },
@@ -18,6 +20,9 @@ return {
 
     -- Example of settings
     metals_config.settings = {
+      showInferredType = true,
+      superMethodLensesEnabled = true,
+      showImplicitConversionsAndClasses = true,
       showImplicitArguments = true,
       excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
     }

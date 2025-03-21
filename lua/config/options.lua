@@ -27,5 +27,8 @@ vim.opt.cursorline = true
 
 vim.opt.foldmethod = "manual"
 
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 -- vim.opt.mouse = ""
 -- vim.opt.mousescroll = "ver:0,hor:0"

@@ -12,6 +12,5 @@ return {
     vim.cmd([[hi Floaterm guibg=black]])
 
     vim.keymap.set('t', '<C-d>', '<C-\\><C-n>:stopinsert<CR>')
-    vim.keymap.set('n', '<C-d>', '<CMD>FloatermHide<CR>')
   end
 }

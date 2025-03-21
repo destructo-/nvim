@@ -3,6 +3,6 @@ return {
   dependencies = { "MunifTanjim/nui.nvim" },
   opts = {
     disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "oil" },
-    restriction_mode = "block", -- "hint", 
+    restriction_mode = "hint", -- "block",
   }
 }
